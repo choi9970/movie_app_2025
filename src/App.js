@@ -1,6 +1,11 @@
 import React from "react";
 
 class App extends React.Component{
+  constructor(props){
+    super(props);
+    console.log("hello");//첫번째 실행
+  }
+
   state = {
     count:0,
   };
@@ -17,7 +22,20 @@ class App extends React.Component{
     }));
   };
 
+  componentDidMount(){
+    console.log('component rendered');
+  }
+
+  componentDidUpdate(){
+    console.log('i just update');
+  }
+
+  componentWillUnmount(){
+    console.log('good bye');
+  }
+
   render(){
+    console.log('randeing');//두번째 실행
     return (
     <div>
       <h1>난 테스트{this.state.count}</h1>
